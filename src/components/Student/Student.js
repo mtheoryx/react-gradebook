@@ -11,6 +11,9 @@ class Student extends React.Component {
     }
 }
 
-
+Student.propTypes = {
+    name: React.PropTypes.string.isRequired,
+    grade: React.PropTypes.number.isRequired
+};
 
 export default Student;
