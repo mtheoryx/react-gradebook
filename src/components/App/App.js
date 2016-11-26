@@ -3,6 +3,7 @@ import './App.css';
 import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
+import Student from '../Student/Student';
 
 class App extends Component {
 
@@ -23,8 +24,11 @@ class App extends Component {
                     {
                         Object
                             .keys(this.state.students)
-                            .map(key => <li key={key}>{this.state.students[key].name} - {this.state.students[key].grade}</li>)
-
+                            .map(key =>
+                                <Student key={key}
+                                         name={this.state.students[key].name}
+                                         grade={this.state.students[key].grade} />
+                            )
                     }
                 </ul>
 
