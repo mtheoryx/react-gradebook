@@ -4,6 +4,7 @@ import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
+import { min } from '../../helpers/stats';
 
 class App extends Component {
 
@@ -21,12 +22,7 @@ class App extends Component {
 
     renderMin() {
         const data = this.state.students;
-        return Object
-                    .keys(data)
-                    .map(key => data[key].grade)
-                    .reduce((m,k) => {
-                        return m < k ? m : k}
-                    , 0);
+        return min(data);
     }
 
     renderMax() {
