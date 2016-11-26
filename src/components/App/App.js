@@ -4,32 +4,16 @@ import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
-import { min, max, avg } from '../../helpers/stats';
+import Summary from '../Summary/Summary';
 
 class App extends Component {
 
     constructor() {
         super();
 
-        this.renderMin = this.renderMin.bind(this);
-        this.renderMax = this.renderMax.bind(this);
-        this.renderAvg = this.renderAvg.bind(this);
-
         this.state = {
             students: sampleData
         }
-    }
-
-    renderMin() {
-        return min(this.state.students);
-    }
-
-    renderMax() {
-        return max(this.state.students);
-    }
-
-    renderAvg() {
-        return avg(this.state.students)
     }
 
     render() {
@@ -39,19 +23,7 @@ class App extends Component {
                 <Intro text="Exam Summary" />
                 <div className="App-data">
                     <Students students={this.state.students}/>
-                    <div className="Summary">
-                        <span>Metrics</span>
-                        <div className="Summary-min">
-                            <span>Min - {this.renderMin()}</span>
-
-                        </div>
-                        <div className="Summary-average">
-                            <span>Avg - {this.renderAvg()}</span>
-                        </div>
-                        <div className="Summary-max">
-                            <span>Max - {this.renderMax()}</span>
-                        </div>
-                    </div>
+                    <Summary students={this.state.students}/>
                 </div>
             </div>
         );
