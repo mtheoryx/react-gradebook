@@ -22,4 +22,8 @@ const Students = props => {
     )
 };
 
+Students.propTypes = {
+    students: React.PropTypes.object
+};
+
 export default Students;
