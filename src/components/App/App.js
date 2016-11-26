@@ -10,9 +10,43 @@ class App extends Component {
     constructor() {
         super();
 
+        this.renderMin = this.renderMin.bind(this);
+        this.renderMax = this.renderMax.bind(this);
+        this.renderAvg = this.renderAvg.bind(this);
+
         this.state = {
             students: sampleData
         }
+    }
+
+    renderMin() {
+        const data = this.state.students;
+        return Object
+                    .keys(data)
+                    .map(key => data[key].grade)
+                    .reduce((m,k) => {
+                        return m < k ? m : k}
+                    , 0);
+    }
+
+    renderMax() {
+        const data = this.state.students;
+        return Object
+                    .keys(data)
+                    .map(key => data[key].grade)
+                    .reduce((m,k) => {
+                        return m > k ? m : k
+                    }, 0);
+    }
+
+    renderAvg() {
+        const data = this.state.students;
+        return Object
+                    .keys(data)
+                    .map(key => data[key].grade)
+                    .reduce((m,k) => {
+                        return m + k
+                    }, 0) / Object.keys(data).length;
     }
 
     render() {
@@ -20,8 +54,22 @@ class App extends Component {
             <div className="App">
                 <Header text="React Gradebook" />
                 <Intro text="Exam Summary" />
-                <Students students={this.state.students}/>
+                <div className="App-data">
+                    <Students students={this.state.students}/>
+                    <div className="Summary">
+                        <span>Metrics</span>
+                        <div className="Summary-min">
+                            <span>Min - {this.renderMin()}</span>
 
+                        </div>
+                        <div className="Summary-average">
+                            <span>Avg - {this.renderAvg()}</span>
+                        </div>
+                        <div className="Summary-max">
+                            <span>Max - {this.renderMax()}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
