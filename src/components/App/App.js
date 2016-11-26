@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import './App.css';
-
 import sampleData from '../../data/demo.js';
+import Header from '../Header/Header';
 
 class App extends Component {
 
@@ -17,13 +16,12 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <h2>React Gradebook</h2>
-                </div>
-                <p className="App-intro">
+                <Header text="React Gradebook" />
+
+                <p className="Intro">
                     Grades
                 </p>
-                <ul className="students">
+                <ul className="Students">
                     {
                         Object
                             .keys(this.state.students)
