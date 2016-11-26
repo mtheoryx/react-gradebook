@@ -17,5 +17,10 @@ export const max = data => {
 };
 
 export const avg = data => {
-
+    return Object
+                .keys(data)
+                .map(key => data[key].grade)
+                .reduce((m,k) => {
+                    return m + k
+                }, 0) / Object.keys(data).length;
 };

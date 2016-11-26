@@ -4,7 +4,7 @@ import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
-import { min, max } from '../../helpers/stats';
+import { min, max, avg } from '../../helpers/stats';
 
 class App extends Component {
 
@@ -29,13 +29,7 @@ class App extends Component {
     }
 
     renderAvg() {
-        const data = this.state.students;
-        return Object
-                    .keys(data)
-                    .map(key => data[key].grade)
-                    .reduce((m,k) => {
-                        return m + k
-                    }, 0) / Object.keys(data).length;
+        return avg(this.state.students)
     }
 
     render() {
