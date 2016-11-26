@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
+import Intro from '../Intro/Intro';
 
 class App extends Component {
 
@@ -17,10 +18,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header text="React Gradebook" />
-
-                <p className="Intro">
-                    Grades
-                </p>
+                <Intro text="Exam Summary" />
                 <ul className="Students">
                     {
                         Object
