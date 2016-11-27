@@ -5,12 +5,20 @@ import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDom.render(<Student name="test name" grade={5} />, div);
+    const student = {
+        name: 'test name',
+        grade: 5
+    };
+    ReactDom.render(<Student student={ student } />, div);
 });
 
 it('renders the passed in props', () => {
-	const wrapper = shallow(<Student name="billy bob" grade={5}/>);
+    const student = {
+        name: 'billy bob',
+        grade: 5
+    };
+	const wrapper = shallow(<Student student={ student } />);
     const text = 'billy bob - 5';
 
-    expect(wrapper.text()).toEqual(text);
+    expect(wrapper.text()).toContain(text);
 });
