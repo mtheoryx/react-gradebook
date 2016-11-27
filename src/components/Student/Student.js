@@ -2,18 +2,21 @@ import React from 'react';
 import './Student.css';
 
 class Student extends React.Component {
+
     render() {
-        const { name, grade } = this.props;
+        const { student, deleteStudent, studentId } = this.props;
 
         return (
-            <li className="Student">{ name } - { grade }</li>
+            <li className="Student">
+                <button className="deleteStudent" onClick={ () => deleteStudent(studentId) }>&times;</button>
+                { student.name } - { student.grade }
+            </li>
         )
     }
 }
 
 Student.propTypes = {
-    name: React.PropTypes.string.isRequired,
-    grade: React.PropTypes.number.isRequired
+    student: React.PropTypes.object.isRequired
 };
 
 export default Student;

@@ -17,8 +17,10 @@ class Students extends Component {
                             .map( key =>
                                 <Student
                                     key={ key }
-                                    name={ students[key].name }
-                                    grade={ students[key].grade } />
+                                    studentId={ key }
+                                    student={ students[key] }
+                                    deleteStudent={ this.props.deleteStudent }
+                                />
                             )
                         : <li>No students.</li>
                 }
