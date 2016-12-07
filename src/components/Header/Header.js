@@ -1,16 +1,14 @@
 import React from 'react';
 import './Header.css';
+import { titleCase } from '../../helpers/strings';
 
 const Header = props => {
+    const text = props.text ? titleCase(props.text) : '';
     return (
         <div className="Header">
-            <h2>{props.text}</h2>
+            <h2>{text}</h2>
         </div>
     )
-};
-
-Header.propTypes = {
-    text: React.PropTypes.string.isRequired
 };
 
 export default Header;
