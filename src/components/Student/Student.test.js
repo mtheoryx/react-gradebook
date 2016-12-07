@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Student from './Student';
 import { shallow } from 'enzyme';
+import expect from 'expect';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
