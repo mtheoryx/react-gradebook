@@ -4,6 +4,7 @@ import { titleCase } from '../../helpers/strings';
 
 const Header = props => {
     const text = props.text ? titleCase(props.text) : '';
+
     return (
         <div className="Header">
             <h2>{text}</h2>
