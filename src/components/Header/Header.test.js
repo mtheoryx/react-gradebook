@@ -5,7 +5,10 @@ import ReactDom from 'react-dom';
 import Header from './Header';
 import { shallow, mount, render } from 'enzyme';
 import expect from 'expect';
+//noinspection JSUnresolvedVariable
 import TestUtils from 'react-addons-test-utils';
+import expectJSX from 'expect-jsx';
+expect.extend(expectJSX);
 
 describe('Header > ', () => {
     it('renders without crashing', () => {
@@ -35,14 +38,8 @@ describe('Header > ', () => {
     	renderer.render(<Header text="some awesome header text" />);
 
         const actual = renderer.getRenderOutput();
+        const expected = <h2>Some Awesome Header Text</h2>;
 
-        const expected = (
-            <div className="Header">
-                <h2>
-                    Some Awesome Header Text
-                </h2>
-            </div>
-        );
-    	expect(actual).toEqual(expected);
+    	expect(actual).toIncludeJSX(expected);
     });
 });
