@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Student from './Student';
 import maxWidthCentered from '../../helpers/storybook-helpers/max-width-centered';
-import textCentered from '../../helpers/storybook-helpers/text-centered';
+import listItemNotInAList from '../../helpers/storybook-helpers/listitem-not-in-a-list';
 
 const mockStudent = {
     name: 'Joe Smith',
@@ -11,5 +11,5 @@ const mockStudent = {
 
 storiesOf('Student', module)
     .addDecorator(maxWidthCentered)
-    .addDecorator(textCentered)
+    .addDecorator(listItemNotInAList)
     .add('List Entry', () => (<Student student={mockStudent} />));
