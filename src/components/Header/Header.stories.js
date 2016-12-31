@@ -1,15 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Header from './Header';
-
-//Helper just for storybook viewing
-
-
+import maxWidthCentered from '../../helpers/storybook-helpers/max-width-centered';
+import textCentered from '../../helpers/storybook-helpers/text-centered';
 
 storiesOf('Header', module)
-    .addDecorator(story => (
-        <div style={{textAlign: 'center'}}>
-            { story() }
-        </div>
-    ))
-    .add('Default View', () => (<Header />));
+    .addDecorator(maxWidthCentered)
+    .addDecorator(textCentered)
+    .add('Default View', () => (<Header />))
+    .add('Supplied Text', () => (<Header text="Supplied Text"/>));
