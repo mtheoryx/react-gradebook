@@ -29,7 +29,7 @@ describe('Header > ', () => {
     	expect(mount(<Header />).find('.Header h2').length).toBe(1);
     });
     it('should render to static HTML', () => {
-        expect(render(<Header />).text()).toEqual('');
+        expect(render(<Header />).text()).toEqual('Sample Text');
         expect(render(<Header text="some text"/>).text()).toEqual('Some Text');
     });
     it('should render the header exactly', () => {
