@@ -5,7 +5,7 @@ const DeleteButton = props => {
     const { onDelete, itemId } = props;
 
     return (
-        <button className="deleteButton" onClick={ () => onDelete(itemId) }>&times;</button>
+        <button className="DeleteButton" onClick={ () => onDelete(itemId) }></button>
     )
 };
 

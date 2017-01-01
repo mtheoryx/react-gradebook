@@ -1,0 +1,25 @@
+.DeleteButton {
+	height: 40px;
+	width: 40px;
+	border: 1px solid #ccc;
+	background-color: #fafafa;
+	position: relative;
+	cursor: pointer;
+}
+.DeleteButton:hover {
+	background-color: #ececec;
+	border-color: #7b7b7b;
+}
+.DeleteButton:active {
+	background-color: #dadada;
+	border-color: #6a6a6a;
+}
+.DeleteButton:active,
+.DeleteButton:focus {
+	outline: none;
+}
+.DeleteButton:after {
+	content: '\00d7';
+	font-size: 24px;
+	color: #505050;
+}
