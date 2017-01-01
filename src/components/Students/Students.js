@@ -6,7 +6,7 @@ import Student from '../Student/Student';
 
 class Students extends Component {
     render() {
-        const { students } = this.props;
+        const { students, deleteStudent } = this.props;
 
         return (
             <ul className="Students">
@@ -19,7 +19,7 @@ class Students extends Component {
                                     key={ key }
                                     studentId={ key }
                                     student={ students[key] }
-                                    deleteStudent={ this.props.deleteStudent }
+                                    deleteStudent={ deleteStudent }
                                 />
                             )
                         : <li>No students.</li>
