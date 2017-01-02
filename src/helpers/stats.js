@@ -1,5 +1,5 @@
 export const min = data =>
-    data.length === 0
+    (Math.min(...data) === Infinity)
         ? 0
         : Math.min(...data);
 
