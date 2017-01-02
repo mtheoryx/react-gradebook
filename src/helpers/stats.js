@@ -1,26 +1,12 @@
-export const min = data => {
-    return Object
-                .keys(data)
-                .map(key => data[key].grade)
-                .reduce((m,k) => {
-                    return m < k ? m : k}
-                , 0);
-};
+export const min = data =>
+    data.length === 0
+        ? 0
+        : Math.min(...data);
 
-export const max = data => {
-    return Object
-                .keys(data)
-                .map(key => data[key].grade)
-                .reduce((m,k) => {
-                    return m > k ? m : k
-                }, 0);
-};
+export const max = data =>
+    data
+        .reduce((m, k) => m > k ? m : k, 0);
 
-export const avg = data => {
-    return Object
-                .keys(data)
-                .map(key => data[key].grade)
-                .reduce((m,k) => {
-                    return m + k
-                }, 0) / Object.keys(data).length;
-};
+export const avg = data =>
+        data
+            .reduce((m,k) => m + k, 0) / Object.keys(data).length || 0;

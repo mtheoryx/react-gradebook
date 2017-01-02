@@ -2,21 +2,29 @@ import React from 'react';
 import './Summary.css';
 import { min, max, avg } from '../../helpers/stats';
 
-//Decorate fail, pass state
+const getGrades = students =>
+    (Object.keys(students).length === 0)
+        ? []
+        : Object
+            .keys(students)
+            .map(key => students[key].grade);
 
-const Summary = props => {
+const gradesArray = students => getGrades(students);
+
+//@TODO: Split out into visualization
+const Summary = ({ students }) => {
     return (
         <div className="Summary">
             <span>Metrics</span>
 
             <div className="Summary-min">
-                <span>Min - {min(props.students)}</span>
+                <span>Min - { min(gradesArray(students)) }</span>
             </div>
             <div className="Summary-average">
-                <span>Avg - {avg(props.students)}</span>
+                <span>Avg - { avg(gradesArray(students)) }</span>
             </div>
             <div className="Summary-max">
-                <span>Max - {max(props.students)}</span>
+                <span>Max - { max(gradesArray(students)) }</span>
             </div>
         </div>
     )

@@ -13,7 +13,7 @@ module.exports = {
     },
     student4: {
         name: 'Jonathan Elm',
-        grade: 0,
+        grade: 10,
     },
     student5: {
         name: 'Tom Dale',
