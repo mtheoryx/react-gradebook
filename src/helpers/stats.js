@@ -4,8 +4,9 @@ export const min = data =>
         : 0;
 
 export const max = data =>
-    data
-        .reduce((m, k) => m > k ? m : k, 0);
+    (data && data.length)
+        ? Math.max(...data)
+        : 0;
 
 export const avg = data =>
     data

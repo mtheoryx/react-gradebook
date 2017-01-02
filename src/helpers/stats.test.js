@@ -45,6 +45,13 @@ describe('max test', () => {
         expect(actual).toEqual(expected);
 	});
 
+	it('should return 0 when not passed anything', () => {
+		const actual = max();
+        const expected = 0;
+
+        expect(actual).toEqual(expected);
+	});
+
 	it('should return 50 for a single entry with 50 in it', () => {
         const testData = [50];
         const actual = max(testData);
@@ -62,7 +69,7 @@ describe('max test', () => {
 	});
 });
 
-describe('avg test', () => {
+xdescribe('avg test', () => {
 	it('should return 0 for empty array', () => {
         const testData = [];
         const actual = avg(testData);
