@@ -69,7 +69,7 @@ describe('max test', () => {
 	});
 });
 
-xdescribe('avg test', () => {
+describe('avg test', () => {
 	it('should return 0 for empty array', () => {
         const testData = [];
         const actual = avg(testData);
@@ -78,10 +78,24 @@ xdescribe('avg test', () => {
         expect(actual).toEqual(expected);
 	});
 
+	it('should return 0 when not passed anything', () => {
+		const actual = avg();
+		const expected = 0;
+
+		expect(actual).toEqual(expected);
+	});
+
 	it('should return 50 for array of two values, 0 and 100', () => {
         const testData = [ 0, 100 ];
         const actual = avg(testData);
         const expected = 50;
+
+        expect(actual).toEqual(expected);
+	});
+	it('should return a good float for average, 2 decimal precision', () => {
+		const testData = [ 100, 85, 65 ];
+		const actual = avg(testData);
+        const expected = 83.33;
 
         expect(actual).toEqual(expected);
 	});

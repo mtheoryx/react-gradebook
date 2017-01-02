@@ -18,13 +18,13 @@ const Summary = ({ students }) => {
             <span>Metrics</span>
 
             <div className="Summary-min">
-                <span>Min - { min(gradesArray(students)) }</span>
+                <span>Min - { min(gradesArray(students)) } %</span>
             </div>
             <div className="Summary-average">
-                <span>Avg - { avg(gradesArray(students)) }</span>
+                <span>Avg - { avg(gradesArray(students)) } %</span>
             </div>
             <div className="Summary-max">
-                <span>Max - { max(gradesArray(students)) }</span>
+                <span>Max - { max(gradesArray(students)) } %</span>
             </div>
         </div>
     )
