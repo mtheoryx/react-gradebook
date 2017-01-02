@@ -8,7 +8,10 @@ class Student extends React.Component {
 
         return (
             <li className="Student">
-                { student.name } - { student.grade }
+                <div className="details">
+                    { student.name } - { student.grade }
+                </div>
+
                 <DeleteButton
                     onDelete={ deleteStudent }
                     itemId={ studentId } />
