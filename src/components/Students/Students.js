@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
 import './Students.css';
 import Student from '../Student/Student';
-
-//Handle delete student
+import DeleteButton from '../DeleteButton/DeleteButton';
 
 class Students extends Component {
     render() {
         const { students, deleteStudent } = this.props;
 
         return (
-            <ul className="Students">
+            <div className="Students">
                 {
                     ( students  ) ?
                         Object
                             .keys( students )
                             .map( key =>
+                            <div key={ key }>
                                 <Student
-                                    key={ key }
                                     studentId={ key }
                                     student={ students[key] }
                                     deleteStudent={ deleteStudent }
                                 />
+                                <DeleteButton
+                                    onDelete={ deleteStudent }
+                                    itemId={ key }/>
+                            </div>
                             )
-                        : <li>No students.</li>
+                        : <div>No students.</div>
                 }
-            </ul>
+            </div>
         )
 
     }

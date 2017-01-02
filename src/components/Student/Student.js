@@ -1,29 +1,20 @@
 import React from 'react';
 import './Student.css';
-import DeleteButton from '../DeleteButton/DeleteButton';
 class Student extends React.Component {
 
     render() {
-        const { student, deleteStudent, studentId } = this.props;
+        const { student } = this.props;
 
         return (
-            <li className="Student">
-                <div className="details">
-                    { student.name } - { student.grade }
-                </div>
-
-                <DeleteButton
-                    onDelete={ deleteStudent }
-                    itemId={ studentId } />
-            </li>
+            <div className="Student">
+                { student.name } - { student.grade }
+            </div>
         )
     }
 }
 
 Student.propTypes = {
-    student: React.PropTypes.object.isRequired,
-    deleteStudent: React.PropTypes.func.isRequired,
-    studentId: React.PropTypes.string.isRequired
+    student: React.PropTypes.object.isRequired
 };
 
 export default Student;
