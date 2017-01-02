@@ -62,12 +62,20 @@ describe('max test', () => {
 	});
 });
 
-xdescribe('avg test', () => {
-	xit('should return 0 for empty array', () => {
+describe('avg test', () => {
+	it('should return 0 for empty array', () => {
+        const testData = [];
+        const actual = avg(testData);
+        const expected = 0;
 
+        expect(actual).toEqual(expected);
 	});
 
-	xit('should return 50 for array of two values, 0 and 100', () => {
+	it('should return 50 for array of two values, 0 and 100', () => {
+        const testData = [ 0, 100 ];
+        const actual = avg(testData);
+        const expected = 50;
 
+        expect(actual).toEqual(expected);
 	});
 });
