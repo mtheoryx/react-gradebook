@@ -12,6 +12,21 @@ describe('min test', () => {
 		expect(actual).toEqual(expected);
 	});
 
+	it('should return 0 when not passed anything', () => {
+		const actual = min();
+        const expected = 0;
+
+        expect(actual).toEqual(expected);
+	});
+
+	it('should return 0 for array that as a min 0 in it', () => {
+		const testData = [ 0, 100, 1000 ];
+		const actual = min(testData);
+		const expected = 0;
+
+		expect(actual).toEqual(expected);
+	});
+
 	it('should return 10 for array that has a min 10 in it', () => {
         const testData = [ 100, 45, 33, 10 ];
         const actual = min(testData);
@@ -19,28 +34,24 @@ describe('min test', () => {
 
         expect(actual).toEqual(expected);
 	});
-
-	xit('should return 100 for array that has a high score of 100 in it', () => {
-
-	});
 });
 
 xdescribe('max test', () => {
-	it('should return 0 for empty array', () => {
+	xit('should return 0 for empty array', () => {
 
 	});
 
-	it('should return 100 for array with a high score of 100 in it', () => {
+	xit('should return 100 for array with a high score of 100 in it', () => {
 
 	});
 });
 
 xdescribe('avg test', () => {
-	it('should return 0 for empty array', () => {
+	xit('should return 0 for empty array', () => {
 
 	});
 
-	it('should return 50 for array of two values, 0 and 100', () => {
+	xit('should return 50 for array of two values, 0 and 100', () => {
 
 	});
 });
