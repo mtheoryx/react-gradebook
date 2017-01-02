@@ -36,13 +36,29 @@ describe('min test', () => {
 	});
 });
 
-xdescribe('max test', () => {
-	xit('should return 0 for empty array', () => {
+describe('max test', () => {
+	it('should return 0 for empty array', () => {
+        const testData = [];
+        const actual = max(testData);
+        const expected = 0;
 
+        expect(actual).toEqual(expected);
 	});
 
-	xit('should return 100 for array with a high score of 100 in it', () => {
+	it('should return 50 for a single entry with 50 in it', () => {
+        const testData = [50];
+        const actual = max(testData);
+        const expected = 50;
 
+        expect(actual).toEqual(expected);
+    });
+
+	it('should return 100 for array with a high score of 100 in it', () => {
+        const testData = [ 0, 10, 23, 55, 100 ];
+        const actual = max(testData);
+        const expected = 100;
+
+        expect(actual).toEqual(expected);
 	});
 });
 
