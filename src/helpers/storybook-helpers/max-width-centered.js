@@ -5,6 +5,6 @@ const style = {
   margin: '0 auto'
 };
 
-export default function (storyFn) {
-  return <div style={style}>{storyFn()}</div>;
-}
+const MaxWidthCentered = storyFn => <div style={style}>{ storyFn() }</div>;
+
+export default MaxWidthCentered;

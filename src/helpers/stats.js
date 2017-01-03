@@ -15,5 +15,5 @@ export const avg = data =>
         ? format(
             data
                 .reduce((m, k) => m + k, 0) / Object.keys(data).length || 0
-            )
+        )
         : format(0);
