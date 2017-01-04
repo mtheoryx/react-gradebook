@@ -1,11 +1,9 @@
 import React from 'react';
 import './Summary.css';
-import { max } from '../../helpers/stats';
-import { getGradesFromObject } from '../../helpers/grades';
 import MinimumScore from '../MinimumScore/MinimumScore';
 import AverageScore from '../AverageScore/AverageScore';
+import MaximumScore from '../MaximumScore/MaximumScore';
 
-//@TODO: Split out into visualization
 const Summary = ({ students }) => {
     return (
         <div className="Summary">
@@ -13,9 +11,7 @@ const Summary = ({ students }) => {
 
             <MinimumScore students={ students } />
             <AverageScore students={ students } />
-            <div className="Summary-max">
-                <span>Max - { max(getGradesFromObject(students)) } %</span>
-            </div>
+            <MaximumScore students={ students } />
         </div>
     )
 };
