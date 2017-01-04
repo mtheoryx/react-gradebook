@@ -14,7 +14,7 @@ class Students extends Component {
                         Object
                             .keys( students )
                             .map( key =>
-                            <div key={ key }>
+                            <div key={ key } className="student-entry">
                                 <Student
                                     studentId={ key }
                                     student={ students[key] }

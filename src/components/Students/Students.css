@@ -3,3 +3,8 @@
   width: 50%;
 }
 
+.Students .student-entry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

@@ -9,6 +9,7 @@
 .DeleteButton:hover {
 	background-color: #ececec;
 	border-color: #7b7b7b;
+
 }
 .DeleteButton:active {
 	background-color: #dadada;
