@@ -12,6 +12,7 @@ class App extends Component {
         super();
 
         this.deleteStudent = this.deleteStudent.bind(this);
+        this.addStudent = this.addStudent.bind(this);
 
         this.state = {
             students: sampleData
@@ -19,14 +20,23 @@ class App extends Component {
     }
 
     deleteStudent( studentId ) {
-        console.log('Deleting student in app!');
-        console.log(studentId);
-
         const students = {...this.state.students};
 
         delete students[studentId];
 
         this.setState({students});
+    }
+
+    addStudent( student ) {
+        //Copy state
+        const students = {...this.state.students};
+
+        //Create new unique id
+        const timestamp = Date.now();
+        students[`student=${ timestamp }`] = student;
+
+        //Set state
+        this.setState({ students });
     }
 
     render() {
@@ -36,7 +46,9 @@ class App extends Component {
                 <Intro text="Exam Summary" />
                 <div className="App-data">
                     <Students students={this.state.students}
-                              deleteStudent={ this.deleteStudent }/>
+                              deleteStudent={ this.deleteStudent }
+                              addStudent={ this.addStudent }
+                    />
                     <Summary students={this.state.students}/>
                 </div>
             </div>
