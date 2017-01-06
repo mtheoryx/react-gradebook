@@ -4,5 +4,5 @@ import Students from './Students';
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
-	ReactDOM.render(<Students />, div);
+	ReactDOM.render(<Students addStudent={() => {}}/>, div);
 });

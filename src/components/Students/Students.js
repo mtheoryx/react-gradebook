@@ -13,8 +13,8 @@ class Students extends Component {
                 <AddStudent addStudent={ addStudent }/>
                 <br/>
                 {
-                    ( students  ) ?
-                        Object
+                    ( students )
+                        ? Object
                             .keys( students )
                             .map( key =>
                             <div key={ key } className="student-entry">

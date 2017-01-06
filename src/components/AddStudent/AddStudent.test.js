@@ -9,6 +9,6 @@ import AddStudent from './AddStudent';
 describe('AddStudent component', () => {
 	it('renders without crashing', () => {
 		const div = document.createElement('div');
-        ReactDOM.render(<AddStudent />, div);
+        ReactDOM.render(<AddStudent addStudent={() => {}}/>, div);
 	});
 });
