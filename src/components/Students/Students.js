@@ -4,7 +4,7 @@ import Student from '../Student/Student';
 import DeleteButton from '../DeleteButton/DeleteButton';
 import AddStudent from '../AddStudent/AddStudent';
 
-const Students = ({ students, deleteStudent, addStudent }) => (
+const Students = ({ students, deleteStudent, addStudent, updateStudent }) => (
     <div className="Students">
         <AddStudent addStudent={ addStudent }/>
         <br/>
@@ -17,7 +17,7 @@ const Students = ({ students, deleteStudent, addStudent }) => (
                         <Student
                             studentId={ key }
                             student={ students[key] }
-                            deleteStudent={ deleteStudent }
+                            updateStudent={ updateStudent }
                         />
                         <DeleteButton
                             onDelete={ deleteStudent }

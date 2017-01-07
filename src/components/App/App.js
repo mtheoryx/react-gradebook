@@ -13,6 +13,7 @@ class App extends Component {
 
         this.deleteStudent = this.deleteStudent.bind(this);
         this.addStudent = this.addStudent.bind(this);
+        this.updateStudent = this.updateStudent.bind(this);
 
         this.state = {
             students: sampleData
@@ -38,6 +39,14 @@ class App extends Component {
         //Set state
         this.setState({ students });
     }
+    
+    updateStudent( key, updatedStudent ) {
+        const students = {...this.state.students};
+
+        students[key] = updatedStudent;
+
+        this.setState({ students });
+    }
 
     render() {
         return (
@@ -48,6 +57,7 @@ class App extends Component {
                     <Students students={this.state.students}
                               deleteStudent={ this.deleteStudent }
                               addStudent={ this.addStudent }
+                              updateStudent={ this.updateStudent }
                     />
                     <Summary students={this.state.students}/>
                 </div>

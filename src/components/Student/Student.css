@@ -6,4 +6,15 @@
 	height: 40px;
 	line-height: 38px;
 	padding-left: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.Student input {
+	border: none;
+}
+.Student .editNameInput {
+	width: 70%;
+}
+.Student .editGradeInput {
+	width: 30%;
 }
