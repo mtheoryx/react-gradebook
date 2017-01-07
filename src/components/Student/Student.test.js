@@ -17,18 +17,7 @@ describe('Student component >', () => {
             name: 'test name',
             grade: 5
         };
-        ReactDom.render(<Student student={ student } deleteStudent={function noRefCheck() {}} studentId={'student1'} />, div);
-    });
-
-    it('renders the passed in props', () => {
-        const student = {
-            name: 'billy bob',
-            grade: 5
-        };
-    	const wrapper = shallow(<Student student={ student } deleteStudent={function noRefCheck() {}} studentId={'student1'} />);
-    	const text = 'billy bob - 5';
-
-        expect(wrapper.text()).toContain(text);
+        ReactDom.render(<Student student={ student } deleteStudent={() => {}} studentId={'student1'} />, div);
     });
 });
 
