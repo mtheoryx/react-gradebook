@@ -1,0 +1,17 @@
+exports[`test Header renders default text value 1`] = `
+<div
+  className="Header">
+  <h2>
+    Sample Text
+  </h2>
+</div>
+`;
+
+exports[`test Header renders the provided text in title case 1`] = `
+<div
+  className="Header">
+  <h2>
+    Sample Text To Caps
+  </h2>
+</div>
+`;

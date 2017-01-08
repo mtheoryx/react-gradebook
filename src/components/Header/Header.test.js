@@ -1,19 +1,19 @@
 import React from 'react';
 import Header from './Header';
-import { mount } from 'enzyme';
-import expect from 'expect';
-import expectJSX from 'expect-jsx';
-
-expect.extend(expectJSX);
+import renderer from 'react-test-renderer';
 
 test('Header renders default text value', () => {
-    const wrapper = mount(<Header />);
-    const header = wrapper.find('h2');
-    expect(header.text()).toBe('Sample Text');
+    const rendered = renderer.create(
+        <Header />
+    );
+
+    expect(rendered.toJSON()).toMatchSnapshot();
 });
 
 test('Header renders the provided text in title case', () => {
-    const wrapper = mount(<Header text="sample text to caps"/>);
-    const header = wrapper.find('h2');
-    expect(header.text()).toBe('Sample Text To Caps');
+    const rendered = renderer.create(
+        <Header text="sample text to caps" />
+    );
+
+    expect(rendered.toJSON()).toMatchSnapshot();
 });
