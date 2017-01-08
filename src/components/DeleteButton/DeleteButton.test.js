@@ -1,25 +1,20 @@
-//noinspection JSUnresolvedVariable
 import React from 'react';
-//noinspection JSUnresolvedVariable
-import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
-import sinon from 'sinon';
+import { mount } from 'enzyme';
 
+// SUT
 import DeleteButton from './DeleteButton';
 
-describe('DeleteButton component', () => {
-	it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<DeleteButton itemId={'student1'} onDelete={() => {}}/>, div);
-	});
-	it('handles a click event', () => {
-		const onButtonClick = sinon.spy();
-		const Btn = shallow(
-			<DeleteButton onDelete={onButtonClick}  itemId={'student1'}/>
-		);
-		Btn.find('button').simulate('click');
-		expect(onButtonClick.calledOnce).toEqual(true);
-	});
+test('DeleteButton calls onDelete with item id when button is clicked', () => {
+    const itemId = 'item1';
+    const onDelete = jest.fn();
+    const wrapper = mount(
+        <DeleteButton onDelete={onDelete} itemId={itemId} />
+    );
 
+    const button = wrapper.find('.DeleteButton');
+
+    button.simulate('click');
+
+    expect(onDelete).toBeCalledWith('item1');
 });
 
