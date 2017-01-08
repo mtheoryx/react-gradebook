@@ -1,0 +1,7 @@
+exports[`test Delete button renders correctly 1`] = `
+<button
+  className="DeleteButton"
+  onClick={[Function]}>
+   
+</button>
+`;
