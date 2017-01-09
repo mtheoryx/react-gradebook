@@ -1,23 +1,27 @@
-//noinspection JSUnresolvedVariable
 import React from 'react';
-//noinspection JSUnresolvedVariable
-import ReactDom from 'react-dom';
-import { shallow } from 'enzyme';
-import expect from 'expect';
-import expectJSX from 'expect-jsx';
-expect.extend(expectJSX);
+import { mount } from 'enzyme';
 
 //Subject under test
 import Student from './Student';
 
-describe('Student component >', () => {
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        const student = {
-            name: 'test name',
-            grade: 5
-        };
-        ReactDom.render(<Student student={ student } deleteStudent={() => {}} studentId={'student1'} />, div);
-    });
+test('Student name edit function called with correct arguments', () => {
+    const updateStudent = jest.fn();
+
+    const student = {
+        name: 'Bill Someone',
+        grade: 85
+    };
+    const studentUpdate = {
+        name: 'Bill Somebody',
+        grade: 85
+    };
+    const wrapper = mount(
+        <Student student={ student } studentId={'student1'} updateStudent={ updateStudent }/>
+    );
+    const nameInput = wrapper.find('.editNameInput');
+
+    nameInput.simulate('change', {target: {name: 'name', value: 'Bill Somebody'}});
+
+    expect(updateStudent).toBeCalledWith('student1', studentUpdate);
 });
 
