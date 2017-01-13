@@ -1,13 +1,16 @@
 import React from 'react';
 import './DeleteButton.css';
 
-const DeleteButton = ({ onDelete, itemId }) => (
-    <button
-        className="DeleteButton"
-        onClick={ () => onDelete(itemId) }>
-        &nbsp;
-    </button>
-);
+const DeleteButton = ({ onDelete, itemId }) => {
+    const onHandleClick = () => onDelete(itemId);
+
+    return (
+        <button
+            className="DeleteButton"
+            onClick={ onHandleClick }>
+            &nbsp;
+        </button>
+)};
 
 DeleteButton.propTypes = {
     onDelete: React.PropTypes.func.isRequired,
