@@ -1,15 +1,16 @@
-//noinspection JSUnresolvedVariable
 import React from 'react';
-//noinspection JSUnresolvedVariable
-import ReactDOM from 'react-dom';
-
+import { mount } from 'enzyme';
+import sampleData from '../../data/demo';
 //Subject under test
 import App from './App';
 
-describe('App component', () => {
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
-    });
 
+test('It renders a predefined list of starting student entries', () => {
+    const numberOfStudents = Object.keys('sampleData').length;
+    const wrapper = mount( <App /> );
+    const renderedStudents = wrapper.find('.Students .student-entry').children().length;
+
+    expect(renderedStudents).toEqual(numberOfStudents);
 });
+
+

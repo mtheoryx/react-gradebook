@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import sampleData from '../../data/demo.js';
 import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
 import Summary from '../Summary/Summary';
+import { getInitialState } from '../../store/student-store';
 
 class App extends Component {
 
@@ -15,9 +15,10 @@ class App extends Component {
         this.addStudent = this.addStudent.bind(this);
         this.updateStudent = this.updateStudent.bind(this);
 
-        this.state = {
-            students: sampleData
-        }
+    }
+
+    componentWillMount() {
+        this.state = getInitialState();
     }
 
     deleteStudent( studentId ) {
