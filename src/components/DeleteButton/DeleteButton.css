@@ -21,6 +21,9 @@
 }
 .DeleteButton:after {
 	content: '\00d7';
-	font-size: 24px;
+	font-size: 40px;
 	color: #505050;
+	position: absolute;
+	top: -8px;
+	left: 7px;
 }

@@ -15,8 +15,9 @@
   },
   "dependencies": {
     "@kadira/storybook-addon-notes": "1.0.1",
-    "react": "15.4.1",
-    "react-dom": "15.4.1"
+    "aphrodite": "1.1.0",
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
