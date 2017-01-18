@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
 import Summary from '../Summary/Summary';
-import { getInitialState } from '../../store/student-store';
+import { getInitialState } from '../../store/store';
 
 class App extends Component {
 

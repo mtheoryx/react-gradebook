@@ -5,6 +5,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-knobs": "1.7.1",
+    "deep-freeze": "0.0.1",
     "enzyme": "2.6.0",
     "expect": "1.20.2",
     "expect-jsx": "2.6.0",
