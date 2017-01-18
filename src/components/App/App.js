@@ -14,10 +14,6 @@ class App extends Component {
         this.deleteStudent = this.deleteStudent.bind(this);
         this.addStudent = this.addStudent.bind(this);
         this.updateStudent = this.updateStudent.bind(this);
-
-    }
-
-    componentWillMount() {
         this.state = getInitialState();
     }
 
@@ -30,14 +26,11 @@ class App extends Component {
     }
 
     addStudent( student ) {
-        //Copy state
         const students = {...this.state.students};
-
-        //Create new unique id
         const timestamp = Date.now();
+
         students[`student=${ timestamp }`] = student;
 
-        //Set state
         this.setState({ students });
     }
     
@@ -62,6 +55,10 @@ class App extends Component {
                     />
                     <Summary students={this.state.students}/>
                 </div>
+                <br/>
+                <div>
+                    <span>Current State:</span>
+                    <pre>{JSON.stringify(this.state.students, null, 4)}</pre></div>
             </div>
         );
     }
