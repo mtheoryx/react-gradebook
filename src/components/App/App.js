@@ -4,7 +4,8 @@ import Header from '../Header/Header';
 import Intro from '../Intro/Intro';
 import Students from '../Students/Students';
 import Summary from '../Summary/Summary';
-import { getInitialState } from '../../store/store';
+import sampleData from '../../data/demo'
+// import { getInitialState } from '../../store/store';
 
 class App extends Component {
 
@@ -14,7 +15,8 @@ class App extends Component {
         this.deleteStudent = this.deleteStudent.bind(this);
         this.addStudent = this.addStudent.bind(this);
         this.updateStudent = this.updateStudent.bind(this);
-        this.state = getInitialState();
+
+        this.state = {students: sampleData};
     }
 
     deleteStudent( studentId ) {
