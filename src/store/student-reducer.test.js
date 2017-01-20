@@ -1,37 +1,8 @@
 import deepFreeze from 'deep-freeze';
 
-const students = ( state = [], action ) => {
-    switch( action.type ) {
-        case 'ADD_STUDENT':
-            return [
-                ...state,
-                {
-                    id: action.id,
-                    name: action.name,
-                    grade: action.grade
-                }
-            ];
-        case 'REMOVE_STUDENT':
-            const studentId = action.id;
-            return state.filter(s => s.id !== studentId);
-        case 'UPDATE_STUDENT':
-            const studentUpdate = {
-                id: action.id,
-                name: action.name,
-                grade: action.grade
-            };
+// Subject Under Test
+import studentsReducer from './student-reducer';
 
-            const objectPosition = state.map(item => item.id).indexOf(action.id);
-
-            return [
-                ...state.slice(0, objectPosition)
-                .concat(studentUpdate),
-                ...state.slice(objectPosition + 1)
-            ];
-        default:
-            return state;
-    }
-};
 test('Should update a student name', () => {
     const stateBefore = [
         {
@@ -69,7 +40,7 @@ test('Should update a student name', () => {
     deepFreeze(action);
 
     expect(
-        students(stateBefore, action)
+        studentsReducer(stateBefore, action)
     ).toEqual(stateAfter);
 });
 test('Should update a student grade', () => {
@@ -109,7 +80,7 @@ test('Should update a student grade', () => {
     deepFreeze(action);
 
     expect(
-        students(stateBefore, action)
+        studentsReducer(stateBefore, action)
     ).toEqual(stateAfter);
 });
 test('Should add a student', () => {
@@ -132,7 +103,7 @@ test('Should add a student', () => {
     deepFreeze(action);
 
     expect(
-        students(stateBefore, action)
+        studentsReducer(stateBefore, action)
     ).toEqual(stateAfter);
 });
 
@@ -165,7 +136,7 @@ test('Should delete a student', () => {
     deepFreeze(action);
 
     expect(
-        students(stateBefore, action)
+        studentsReducer(stateBefore, action)
     ).toEqual(stateAfter);
 });
 
